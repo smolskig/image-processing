@@ -7,22 +7,61 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="controls">
-      <div>
-        <div>Brightness</div>
-        <input
-          min="-1.0"
-          max="1.0"
-          value="0"
-          type="range"
-          step="0.01"
-          name="brightness"
-          id="range-bright"
-        />
+    <div class="container">
+      <div class="controls">
+        <h3>Adjusts</h3>
+        <div>
+          <div>Brightness</div>
+          <input
+            min="-1.0"
+            max="1.0"
+            value="0"
+            type="range"
+            step="0.01"
+            id="range-bright"
+          />
+        </div>
+
+        <h3>Color</h3>
+        <div>
+          <div>Red</div>
+          <input
+            min="-1.0"
+            max="1.0"
+            value="0"
+            type="range"
+            step="0.01"
+            id="range-red"
+          />
+        </div>
+        <div>
+          <div>Green</div>
+          <input
+            min="-1.0"
+            max="1.0"
+            value="0"
+            type="range"
+            step="0.01"
+            id="range-green"
+          />
+        </div>
+        <div>
+          <div>Blue</div>
+          <input
+            min="-1.0"
+            max="1.0"
+            value="0"
+            type="range"
+            step="0.01"
+            id="range-blue"
+          />
+        </div>
+      </div>
+
+      <div class="display">
+        <canvas id="canvas1"></canvas>
       </div>
     </div>
-
-    <canvas id="canvas1"></canvas>
 
     <script src="script.js"></script>
   </body>
