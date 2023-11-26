@@ -1,4 +1,4 @@
-function debounce(func, timeout = 10) {
+function debounce(func, timeout = 25) {
   let timer;
   return (...args) => {
     clearTimeout(timer);
@@ -21,23 +21,33 @@ image.addEventListener("load", () => {
   canvas.height = image.height;
 
   ctx.drawImage(image, 0, 0);
+
+  //get loaded image data
   const scannedImage = ctx.getImageData(0, 0, canvas.width, canvas.height);
 
   brightSlider.addEventListener(
     "input",
     debounce((e) => {
-      ctx.putImageData(applyBright(scannedImage, e.target.value), 0, 0);
+      const newImage = applyBright(scannedImage, e.target.value);
+
+      //updating image with new processing
+      ctx.putImageData(newImage, 0, 0);
     })
   );
 });
 
 const applyBright = (scannedImage, brightValue) => {
   let newImage = structuredClone(scannedImage);
-  console.log(brightValue)
+
   for (let i = 0; i < newImage.data.length; i += 4) {
-    newImage.data[i] = scannedImage.data[i] + 255 * brightValue;
-    newImage.data[i + 1] = scannedImage.data[i + 1] + 255 * brightValue;
-    newImage.data[i + 2] = scannedImage.data[i + 2] + 255 * brightValue;
+    const redIndex = i;
+    const greenIndex = i + 1;
+    const blueIndex = i + 2;
+
+    //changing RGB colors to a range between -255 and 255 based on the value of the slider
+    newImage.data[redIndex] = scannedImage.data[redIndex] + 255 * brightValue;
+    newImage.data[greenIndex] = scannedImage.data[greenIndex] + 255 * brightValue;
+    newImage.data[blueIndex] = scannedImage.data[blueIndex] + 255 * brightValue;
   }
 
   return newImage;
