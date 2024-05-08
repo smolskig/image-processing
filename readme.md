@@ -8,4 +8,4 @@ Right now I have implemented some basic image param controls such as:
 - [x] Brightness slider
 
 ## TO-DO features:
-- [] Blur slider
+- [ ] Blur slider
