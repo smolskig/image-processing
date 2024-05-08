@@ -21,20 +21,6 @@ const redSlider = document.getElementById("range-red");
 const greenSlider = document.getElementById("range-green");
 const blueSlider = document.getElementById("range-blue");
 
-const needsUpdate = {
-  red: false,
-  blue: false,
-  green: false,
-  brightness: false,
-};
-
-const canvasHistory = {
-  red: null,
-  blue: null,
-  green: null,
-  brightness: null,
-};
-
 const image = new Image();
 image.src = "img.jpg";
 
