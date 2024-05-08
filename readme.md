@@ -4,8 +4,8 @@ This is an experiment with Javascript and HTML canvas for image processing algor
 
 Right now I have implemented some basic image param controls such as:
 
-[x] RGB sliders
-[x] Brightness slider
+- [x] RGB sliders
+- [x] Brightness slider
 
-TO-DO features:
-[] Blur slider
+## TO-DO features:
+- [] Blur slider
